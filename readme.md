@@ -93,3 +93,6 @@ python -m venv venv
 (mac) source venv/bin/activate 
 pip install streamlit dotenv openai
 
+DEMO LINK: 
+
+https://drive.google.com/file/d/1pXDPhBJSyNgOUTZDXV76qkT-Lg1sjcjG/view?usp=sharing
