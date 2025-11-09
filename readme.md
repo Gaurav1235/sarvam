@@ -75,3 +75,13 @@ Didnt understood this question
 
 
 # sarvam
+
+setup instructions: 
+install  python 3.11 
+
+Before running -> install dependencies such as openai, dotenv
+and place OPENAI_API_KEY in .env file 
+
+To run : 
+
+streamlit run reservation.py 
