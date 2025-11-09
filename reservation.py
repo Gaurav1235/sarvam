@@ -956,9 +956,18 @@ with col2:
             st.warning("Enter reservation code above.")
         else:
             out = cancel_reservation_db(cancel_code)
-            st.json(out)
-            # optional: clear the input after cancel
-            st.session_state["cancel_code_input"] = ""
+            # Save success/error to show after rerun
+            if out.get("status") == "cancelled":
+                st.session_state["last_success"] = f"Reservation {cancel_code} cancelled."
+                st.session_state["last_success_payload"] = out
+                # set flag to clear the cancel input on next run
+                st.session_state["clear_cancel_after"] = True
+                st.rerun()
+            else:
+                # surface the error and keep the input so user can correct it
+                st.session_state["last_error"] = f"Failed to cancel: {out.get('error', out)}"
+                st.session_state["last_error_payload"] = out
+                st.rerun()
     
 
 st.write("---")
