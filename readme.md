@@ -79,9 +79,17 @@ Didnt understood this question
 setup instructions: 
 install  python 3.11 
 
-Before running -> install dependencies such as openai, dotenv
+Before running -> install dependencies such as openai, dotenv, streamlit
 and place OPENAI_API_KEY in .env file 
 
 To run : 
 
 streamlit run reservation.py 
+
+OR 
+
+you can setup virtual environment -> 
+python -m venv venv
+(mac) source venv/bin/activate 
+pip install streamlit dotenv openai
+
